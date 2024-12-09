@@ -6,12 +6,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
+    <title>SportXtreme -- Tienda de deportes</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="apple-touch-icon" src="images/milogo2.jpg">
+    <link rel="shortcut icon" src="images/milogo2.png">
+    
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
@@ -19,14 +21,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/cs-skin-elastic.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
    <style>
     #weatherWidget .currentDesc {
@@ -62,7 +65,15 @@
         #cellPaiChart{
             height: 160px;
         }
-
+        .top-right {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        #myButton {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -73,19 +84,82 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="./inicio"><i class="menu-icon fa fa-laptop"></i>INICIO</a>
+                        <a href="./inicio"><i class="menu-icon fa fa-home"></i> INICIO</a>
                     </li>
-                    <li class="menu-title">Extras</li><!-- /.menu-title -->
+                    <li class="menu-title">Deportes</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            <i class="menu-icon fa fa-futbol-o"></i> Futbol
+                        </a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="/show">SHOW</a></li>
+                            <li><i class="menu-icon fa fa-tshirt"></i>
+                                <a href="{{ route('futbol.index', ['categoria' => 'ropa']) }}">Ropa</a>
+                            </li>
+                            <li><i class="menu-icon fa fa-shield-alt"></i>
+                                <a href="{{ route('futbol.index', ['categoria' => 'equipamiento']) }}">Equipamiento</a>
+                            </li>
+                            <li><i class="menu-icon fa fa-futbol-o"></i>
+                                <a href="{{ route('futbol.index', ['categoria' => 'accesorios']) }}">Accesorios</a>
+                            </li>
                         </ul>
+                        
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            <i class="menu-icon fa fa-baseball-ball"></i> Beisbol
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-tshirt"></i>
+                                <a href="{{ route('beisbol.index', ['categoria' => 'ropa']) }}">Ropa</a>
+                            </li>
+                            <li><i class="menu-icon fa fa-shield-alt"></i>
+                                <a href="{{ route('beisbol.index', ['categoria' => 'equipamiento']) }}">Equipamiento</a>
+                            </li>
+                            <li><i class="menu-icon fa fa-futbol-o"></i>
+                                <a href="{{ route('beisbol.index', ['categoria' => 'accesorios']) }}">Accesorios</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            <i class="menu-icon fa fa-basketball-ball"></i> Basquetbol
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-tshirt"></i>
+                                <a href="{{ route('basquetbol.index', ['categoria' => 'ropa']) }}">Ropa</a>
+                            </li>
+                            <li><i class="menu-icon fa fa-shield-alt"></i>
+                                <a href="{{ route('basquetbol.index', ['categoria' => 'equipamiento']) }}">Equipamiento</a>
+                            </li>
+                            <li><i class="menu-icon fa fa-futbol-o"></i>
+                                <a href="{{ route('basquetbol.index', ['categoria' => 'accesorios']) }}">Accesorios</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-title">Carrito</li><!-- /.menu-title -->
+                    <li class="menu-item">
+                        <a href="/carrito"> <i class="menu-icon fa fa-shopping-cart"></i> Ver Carrito</a>
+                    </li>
+                    <li class="menu-title">Productos más vendidos</li><!-- /.menu-title -->
+                    <li class="menu-item">
+                        <a href="/show"> <i class="menu-icon fa fa-futbol-o"></i> Futbol</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/show"> <i class="menu-icon fa fa-baseball-ball"></i> Beisbol</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/show"> <i class="menu-icon fa fa-basketball-ball"></i> Basquetbol</a>
+                    </li>
+                    <li class="menu-title">Contáctanos</li><!-- /.menu-title -->
+                    <li class="menu-item">
+                        <a href="/show"> <i class="menu-icon fa fa-envelope"></i> Contáctanos</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside>
+    
+    
     <!-- /#left-panel -->
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
@@ -94,16 +168,36 @@
             <div class="top-left">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="./inicio">
-                        <img src="images/logo.jpg" alt="Logo" width="75" height="auto">
+                        <img src="{{ asset('images/milogo2.png') }}" alt="Logo" width="75" height="auto">
                     </a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
+
+            <div class="user-area dropdown float-right">
+                <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="user-avatar rounded-circle" src="{{ asset('images/admin.jpg') }}" alt="User Avatar">
+                </a>
+
+                <div class="user-menu dropdown-menu">
+                    <a class="btn btn-outline-primary btn-sm mb-2" href="#"><i class="fa fa-user"></i> My Profile</a>
+                
+                    <a class="btn btn-outline-primary btn-sm mb-2" href="#"><i class="fa fa-bell"></i> Notifications   </a>
+                
+                    <a class="btn btn-outline-primary btn-sm mb-2" href="#"><i class="fa fa-cog"></i> Settings</a>
+                             
+                    <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                        @csrf
+                        <button type="submit" class="btn btn-outline-primary btn-sm mb-2 fa fa-power-off">Cerrar Sesión</button>
+                    </form>
+                </div>
+                
+            
         </header>
         <!-- /#header -->
         <!-- Content -->
         <div class="content">
-            {{$slot}}
+            @yield('content')
         </div>
         <div class="clearfix"></div>
         <!-- Footer -->
@@ -125,7 +219,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
@@ -138,11 +232,13 @@
     <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
-    <script src="assets/js/init/weather-init.js"></script>
+    <script src="{{ asset('assets/js/init/weather-init.js') }}"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-    <script src="assets/js/init/fullcalendar-init.js"></script>
+    <script src="{{ asset('assets/js/init/fullcalendar-init.js') }}"></script>
+
 
     <!--Local Stuff-->
     <script>

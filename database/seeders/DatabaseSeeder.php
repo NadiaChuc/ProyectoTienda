@@ -4,9 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Permisos;
-use App\Models\Compras;
-use App\Models\Productos;
-use App\Models\Detalles;
+use App\Models\Producto;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,14 +15,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // User::factory(10)->create();
         $this->call([
-            UserSeeder::class
+            UserSeeder::class,
+            ProductoSeeder::class,
+            CarritoSeeder::class
+
         ]);
 
         User::factory(2)->create();
         Permisos::factory(3)->create();
-        Compras::factory(10)->create();
-        Productos::factory(20)->create();
-        Detalles::factory(10)->create();
+        Producto::factory(120)->create();
     }
 }

@@ -20,7 +20,7 @@ class PermisosFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_permiso' => User::inRandomOrder()->first()->id_permiso,
+            'id_permiso' => User::inRandomOrder()->first()->id,
             'type' => fake()->randomElement(['Vendedor', 'Comprador'])
         ];
     }

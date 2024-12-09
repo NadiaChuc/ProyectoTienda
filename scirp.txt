@@ -1,0 +1,81 @@
+SET @contador_ropa = 0;
+SET @contador_equipamiento = 0;
+SET @contador_accesorios = 0;
+ 
+UPDATE productos
+SET nombre = CASE
+    WHEN deporte = 'beisbol' AND categoria = 'ropa' THEN 
+        CONCAT('Ropa_Beisbol_', (@contador_ropa := @contador_ropa + 1))
+    WHEN deporte = 'beisbol' AND categoria = 'equipamiento' THEN 
+        CONCAT('Equipamiento_Beisbol_', (@contador_equipamiento := @contador_equipamiento + 1))
+    WHEN deporte = 'beisbol' AND categoria = 'accesorios' THEN 
+        CONCAT('Accesorios_Beisbol_', (@contador_accesorios := @contador_accesorios + 1))
+    ELSE nombre
+END;
+
+SET @contador_ropa = 0;
+SET @contador_equipamiento = 0;
+SET @contador_accesorios = 0;
+ 
+UPDATE productos
+SET nombre = CASE
+    WHEN deporte = 'futbol' AND categoria = 'ropa' THEN 
+        CONCAT('Ropa_futbol_', (@contador_ropa := @contador_ropa + 1))
+    WHEN deporte = 'futbol' AND categoria = 'equipamiento' THEN 
+        CONCAT('Equipamiento_futbol_', (@contador_equipamiento := @contador_equipamiento + 1))
+    WHEN deporte = 'futbol' AND categoria = 'accesorios' THEN 
+        CONCAT('Accesorios_futbol_', (@contador_accesorios := @contador_accesorios + 1))
+    ELSE nombre
+END;
+
+SET @contador_ropa = 0;
+SET @contador_equipamiento = 0;
+SET @contador_accesorios = 0;
+
+UPDATE productos
+SET nombre = CASE
+    WHEN deporte = 'basquetbol' AND categoria = 'ropa' THEN 
+        CONCAT('Ropa_Basquetbol_', (@contador_ropa := @contador_ropa + 1))
+    WHEN deporte = 'basquetbol' AND categoria = 'equipamiento' THEN 
+        CONCAT('Equipamiento_Basquetbol_', (@contador_equipamiento := @contador_equipamiento + 1))
+    WHEN deporte = 'basquetbol' AND categoria = 'accesorios' THEN 
+        CONCAT('Accesorios_Basquetbol_', (@contador_accesorios := @contador_accesorios + 1))
+    ELSE nombre
+END;
+
+UPDATE productos
+SET image = CASE 
+    WHEN nombre = 'Ropa_futbol_1' THEN 'images/futbol/ropa/futbol1.jpg'
+    WHEN nombre = 'Ropa_futbol_2' THEN 'images/futbol/ropa/futbol2.jpg'
+    WHEN nombre = 'Ropa_futbol_3' THEN 'images/futbol/ropa/futbol3.jpg'
+    WHEN nombre = 'Ropa_futbol_4' THEN 'images/futbol/ropa/futbol4.jpg'
+    WHEN nombre = 'Ropa_futbol_5' THEN 'images/futbol/ropa/futbol5.jpg'
+    WHEN nombre = 'Ropa_futbol_6' THEN 'images/futbol/ropa/futbol6.jpg'
+    ELSE image
+END
+WHERE nombre IN ('Ropa_futbol_1', 'Ropa_futbol_2', 'Ropa_futbol_3', 'Ropa_futbol_4', 'Ropa_futbol_5', 'Ropa_futbol_6');
+
+UPDATE productos
+SET image = CASE 
+    WHEN nombre = 'Ropa_Beisbol_1' THEN 'images/beisbol/ropa/beisbol1.jpg'
+    WHEN nombre = 'Ropa_Beisbol_2' THEN 'images/beisbol/ropa/beisbol2.jpg'
+    WHEN nombre = 'Ropa_Beisbol_3' THEN 'images/beisbol/ropa/beisbol3.jpg'
+    WHEN nombre = 'Ropa_Beisbol_4' THEN 'images/beisbol/ropa/beisbol4.jpg'
+    WHEN nombre = 'Ropa_Beisbol_5' THEN 'images/beisbol/ropa/beisbol5.jpg'
+    WHEN nombre = 'Ropa_Beisbol_6' THEN 'images/beisbol/ropa/beisbol6.jpg'
+    ELSE image
+END
+WHERE nombre IN ('Ropa_Beisbol_1', 'Ropa_Beisbol_2', 'Ropa_Beisbol_3', 'Ropa_Beisbol_4', 'Ropa_Beisbol_5', 'Ropa_Beisbol_6');
+
+UPDATE productos
+SET image = CASE 
+    WHEN nombre = 'Ropa_Basquetbol_1' THEN 'images/basquetbol/ropa/basquetbol1.jpg'
+    WHEN nombre = 'Ropa_Basquetbol_2' THEN 'images/basquetbol/ropa/basquetbol2.jpg'
+    WHEN nombre = 'Ropa_Basquetbol_3' THEN 'images/basquetbol/ropa/basquetbol3.jpg'
+    WHEN nombre = 'Ropa_Basquetbol_4' THEN 'images/basquetbol/ropa/basquetbol4.jpg'
+    WHEN nombre = 'Ropa_Basquetbol_5' THEN 'images/basquetbol/ropa/basquetbol5.jpg'
+    WHEN nombre = 'Ropa_Basquetbol_6' THEN 'images/basquetbol/ropa/basquetbol6.jpg'
+    ELSE image
+END
+WHERE nombre IN ('Ropa_Basquetbol_1', 'Ropa_Basquetbol_2', 'Ropa_Basquetbol_3', 'Ropa_Basquetbol_4', 'Ropa_Basquetbol_5', 'Ropa_Basquetbol_6');
+

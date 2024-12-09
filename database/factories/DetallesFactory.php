@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Producto;
 use App\Models\Compras;
-use App\Models\Productos;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -22,7 +22,7 @@ class DetallesFactory extends Factory
     {
         return [
             'id_compra' => Compras::inRandomOrder()->first()-> id_compra,
-            'id_producto' => Productos::inRandomOrder()->first()-> id_producto,
+            'id_producto' => Producto::inRandomOrder()->first()-> id_producto,
             'quantity' => fake()->numberBetween(1,10),
             'mount' => fake()->randomFloat(2,1,100)
         ];
