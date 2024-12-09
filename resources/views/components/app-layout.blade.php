@@ -74,6 +74,50 @@
             padding: 10px 20px;
             font-size: 14px;
         }
+        .contact-section {
+        background-color: #f4f7fc;
+        padding: 50px 0;
+    }
+    .contact-info {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .contact-info h2 {
+        color: #34495e;
+    }
+    .contact-info p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .contact-info .social-icons a {
+        color: #3498db;
+        margin: 0 10px;
+        font-size: 30px;
+        transition: color 0.3s ease;
+    }
+    .contact-info .social-icons a:hover {
+        color: #2980b9;
+    }
+    
+    /* Estilo mejorado del botón */
+    .contact-btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #3498db;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        margin-top: 30px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .contact-btn:hover {
+        background-color: #2980b9;
+        transform: scale(1.05);
+    }
     </style>
 </head>
 
@@ -152,7 +196,7 @@
                     </li>
                     <li class="menu-title">Contáctanos</li><!-- /.menu-title -->
                     <li class="menu-item">
-                        <a href="/show"> <i class="menu-icon fa fa-envelope"></i> Contáctanos</a>
+                        <a href="/contacto"> <i class="menu-icon fa fa-envelope"></i> Contáctanos</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

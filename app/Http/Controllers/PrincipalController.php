@@ -36,6 +36,10 @@ class PrincipalController extends Controller
         return view("vistas.inicio");
     }
 
+    public function contacto(){
+        return view("vistas.contacto");
+    }
+
     public function registro(){
         return view('vistas.register');
     }
@@ -58,8 +62,4 @@ class PrincipalController extends Controller
         $request->session()->regenerateToken();
         return redirect('/');
     }
-
-    /*public function show(){
-        return view("vistas.show");
-    }*/
 }

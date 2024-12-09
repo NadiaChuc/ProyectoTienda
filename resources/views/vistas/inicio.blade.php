@@ -1,3 +1,7 @@
-<x-app-layout>
-	Aqui va el contenido de la página
-</x-app-layout>
+@extends('components.app-layout')
+
+@section('content')
+
+<h1>Productos en tu carrito</h1>
+
+@endsection
