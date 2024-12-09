@@ -3,7 +3,9 @@
 @section('content')
 
 <!-- Enlace para volver a la lista de productos, adaptado dependiendo de la ruta -->
-<a href="{{ route(request()->segment(1) . '.index', ['categoria' => $producto->categoria]) }}">Volver</a>
+<a href="{{ route(request()->segment(1) . '.index', ['categoria' => $producto->categoria]) }}">
+    <button type="submit" class="btn btn-primary">Volver</button>
+</a>
 
 <h1>{{ $producto->nombre}}</h1> <!-- Mostrar nombre del producto -->
 
@@ -23,6 +25,7 @@
 <form action="{{ route('carrito.store') }}" method="POST">
     @csrf
     <input type="hidden" name="producto_id" value="{{ $producto->id }}">
+    <input type="hidden" name="categoria" value="{{ request()->categoria }}">
 
     <div class="form-group">
         <label for="cantidad">Cantidad:</label>

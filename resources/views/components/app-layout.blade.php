@@ -128,7 +128,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="./inicio"><i class="menu-icon fa fa-home"></i> INICIO</a>
+                        <a href="/inicio"><i class="menu-icon fa fa-home"></i> INICIO</a>
                     </li>
                     <li class="menu-title">Deportes</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">

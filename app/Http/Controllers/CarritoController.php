@@ -8,7 +8,6 @@ use App\Models\Carrito;
 use App\Models\CarritoProducto;
 use App\Models\Producto;
 
-
 class CarritoController extends Controller
 {
     /**
@@ -37,7 +36,6 @@ class CarritoController extends Controller
         $carritoProducto = CarritoProducto::where('carrito_id', $carrito->id)
                                           ->where('producto_id', $producto->id)
                                           ->first();
-
         if ($carritoProducto) {
             // Si el producto ya está en el carrito, actualizamos la cantidad
             $carritoProducto->cantidad += $request->cantidad;
@@ -50,10 +48,8 @@ class CarritoController extends Controller
                 'cantidad' => $request->cantidad,
             ]);
         }
-
         // Redirigir con un mensaje de éxito
-       return redirect()->route('futbol.show', ['futbol' => $producto->id])->with('mensaje', 'Producto agregado al carrito.');
-
+        return back()->with('mensaje', 'Producto agregado al carrito.');
     }
 
     /**

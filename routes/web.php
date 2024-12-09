@@ -18,13 +18,13 @@ Route::get('/registro', [PrincipalController::class, 'registro']);
 Route::post('/agregar',[PrincipalController::class, 'useradd']);
 Route::post('/inicio', [PrincipalController::class, 'validador'])->name('login.validate');
 Route::get('/inicio', [PrincipalController::class, 'inicio'])->name('inicio');
-Route::get('/contacto', [PrincipalController::class, 'contacto'])->name('contacto');
+//Route::get('/contacto', [PrincipalController::class, 'contacto'])->name('contacto');
 Route::post('/logout', [PrincipalController::class, 'logout'])->name('logout');
-//Route::get('/contacto', [PrincipalController::class, 'contacto']);
+Route::get('/contacto', [PrincipalController::class, 'contacto']);
 Route::resource('futbol', FutbolController::class);
 Route::resource('beisbol', BeisbolController::class);
 Route::resource('basquetbol', BasquetbolController::class);
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('carrito', CarritoController::class);
+    Route::resource('carrito', CarritoController::class)->except(['show']);
 });
