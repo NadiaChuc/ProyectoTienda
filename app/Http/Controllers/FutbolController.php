@@ -60,7 +60,6 @@ class FutbolController extends Controller
     return view('vistas.show', compact('producto'));
     }  
 
-
    /* public function edit ($futbol){
         $futbol = Producto::find($futbol);
         return view ('plan.edit', compact('curso'));

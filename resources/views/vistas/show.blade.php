@@ -14,7 +14,7 @@
 <p><b>Categoría:</b> {{$producto->categoria}}</p>
 
 <!-- Mostrar descripción o contenido del producto -->
-<p>{{$producto->descripcion}}</p>
+<p>{{$producto->description}}</p>
 
 <!-- Mostrar precio -->
 <p><b>Precio:</b> ${{ number_format($producto->precio, 2) }}</p>

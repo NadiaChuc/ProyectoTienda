@@ -57,6 +57,29 @@ WHERE nombre IN ('Ropa_futbol_1', 'Ropa_futbol_2', 'Ropa_futbol_3', 'Ropa_futbol
 
 UPDATE productos
 SET image = CASE 
+    WHEN nombre = 'Equipamiento_futbol_1' THEN 'images/futbol/equipo/equipo1.jpg'
+    WHEN nombre = 'Equipamiento_futbol_2' THEN 'images/futbol/equipo/equipo2.jpg'
+    WHEN nombre = 'Equipamiento_futbol_3' THEN 'images/futbol/equipo/equipo3.jpg'
+    WHEN nombre = 'Equipamiento_futbol_4' THEN 'images/futbol/equipo/equipo4.jpg'
+    WHEN nombre = 'Equipamiento_futbol_5' THEN 'images/futbol/equipo/equipo5.jpg'
+    ELSE image
+END
+WHERE nombre IN ('Equipamiento_futbol_1', 'Equipamiento_futbol_2', 'Equipamiento_futbol_3', 'Equipamiento_futbol_4', 'Equipamiento_futbol_5');
+
+UPDATE productos
+SET image = CASE 
+    WHEN nombre = 'Accesorios_futbol_1' THEN 'images/futbol/accesorio/accesorio1.jpg'
+    WHEN nombre = 'Accesorios_futbol_2' THEN 'images/futbol/accesorio/accesorio2.jpg'
+    WHEN nombre = 'Accesorios_futbol_3' THEN 'images/futbol/accesorio/accesorio3.jpg'
+    WHEN nombre = 'Accesorios_futbol_4' THEN 'images/futbol/accesorio/accesorio4.jpg'
+    WHEN nombre = 'Accesorios_futbol_5' THEN 'images/futbol/accesorio/accesorio5.jpg'
+    ELSE image
+END
+WHERE nombre IN ('Accesorios_futbol_1', 'Accesorios_futbol_2', 'Accesorios_futbol_3', 'Accesorios_futbol_4', 'Accesorios_futbol_5');
+
+
+UPDATE productos
+SET image = CASE 
     WHEN nombre = 'Ropa_Beisbol_1' THEN 'images/beisbol/ropa/beisbol1.jpg'
     WHEN nombre = 'Ropa_Beisbol_2' THEN 'images/beisbol/ropa/beisbol2.jpg'
     WHEN nombre = 'Ropa_Beisbol_3' THEN 'images/beisbol/ropa/beisbol3.jpg'
@@ -78,4 +101,45 @@ SET image = CASE
     ELSE image
 END
 WHERE nombre IN ('Ropa_Basquetbol_1', 'Ropa_Basquetbol_2', 'Ropa_Basquetbol_3', 'Ropa_Basquetbol_4', 'Ropa_Basquetbol_5', 'Ropa_Basquetbol_6');
+
+UPDATE productos
+SET image = CASE 
+    WHEN nombre = 'Accesorios_Basquetbol_1' THEN 'images/basquetbol/accesorio/accesorio1.jpg'
+    WHEN nombre = 'Accesorios_Basquetbol_2' THEN 'images/basquetbol/accesorio/accesorio2.jpg'
+    WHEN nombre = 'Accesorios_Basquetbol_3' THEN 'images/basquetbol/accesorio/accesorio3.jpg'
+    WHEN nombre = 'Accesorios_Basquetbol_4' THEN 'images/basquetbol/accesorio/accesorio4.jpg'
+    WHEN nombre = 'Accesorios_Basquetbol_5' THEN 'images/basquetbol/accesorio/accesorio5.jpg'
+    ELSE image
+END
+WHERE nombre IN ('Accesorios_Basquetbol_1', 'Accesorios_Basquetbol_2', 'Accesorios_Basquetbol_3', 'Accesorios_Basquetbol_4', 'Accesorios_Basquetbol_5');
+UPDATE productos
+SET image = CASE 
+    WHEN nombre = 'Equipamiento_Basquetbol_1' THEN 'images/basquetbol/equipo/equipo1.jpg'
+    WHEN nombre = 'Equipamiento_Basquetbol_2' THEN 'images/basquetbol/equipo/equipo2.jpg'
+    WHEN nombre = 'Equipamiento_Basquetbol_3' THEN 'images/basquetbol/equipo/equipo3.jpg'
+    WHEN nombre = 'Equipamiento_Basquetbol_4' THEN 'images/basquetbol/equipo/equipo4.jpg'
+    WHEN nombre = 'Equipamiento_Basquetbol_5' THEN 'images/basquetbol/equipo/equipo5.jpg'
+    ELSE image
+END
+WHERE nombre IN ('Equipamiento_Basquetbol_1', 'Equipamiento_Basquetbol_2', 'Equipamiento_Basquetbol_3', 'Equipamiento_Basquetbol_4', 'Equipamiento_Basquetbol_5');
+UPDATE productos
+SET image = CASE 
+    WHEN nombre = 'Accesorios_Beisbol_1' THEN 'images/beisbol/accesorio/accesorio1.jpg'
+    WHEN nombre = 'Accesorios_Beisbol_2' THEN 'images/beisbol/accesorio/accesorio2.jpg'
+    WHEN nombre = 'Accesorios_Beisbol_3' THEN 'images/beisbol/accesorio/accesorio3.jpg'
+    WHEN nombre = 'Accesorios_Beisbol_4' THEN 'images/beisbol/accesorio/accesorio4.jpg'
+    WHEN nombre = 'Accesorios_Beisbol_5' THEN 'images/beisbol/accesorio/accesorio5.jpg'
+    ELSE image
+END
+WHERE nombre IN ('Accesorios_Beisbol_1', 'Accesorios_Beisbol_2', 'Accesorios_Beisbol_3', 'Accesorios_Beisbol_4', 'Accesorios_Beisbol_5');
+UPDATE productos
+SET image = CASE 
+    WHEN nombre = 'Equipamiento_Beisbol_1' THEN 'images/beisbol/equipo/equipo1.jpg'
+    WHEN nombre = 'Equipamiento_Beisbol_2' THEN 'images/beisbol/equipo/equipo2.jpg'
+    WHEN nombre = 'Equipamiento_Beisbol_3' THEN 'images/beisbol/equipo/equipo3.jpg'
+    WHEN nombre = 'Equipamiento_Beisbol_4' THEN 'images/beisbol/equipo/equipo4.jpg'
+    WHEN nombre = 'Equipamiento_Beisbol_5' THEN 'images/beisbol/equipo/equipo5.jpg'
+    ELSE image
+END
+WHERE nombre IN ('Equipamiento_Beisbol_1', 'Equipamiento_Beisbol_2', 'Equipamiento_Beisbol_3', 'Equipamiento_Beisbol_4', 'Equipamiento_Beisbol_5');
 
